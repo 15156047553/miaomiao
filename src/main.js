@@ -6,6 +6,14 @@ import store from './store'
 import axios from 'axios'
 Vue.prototype.axios = axios
 
+/* eslint-disable-next-line import/first */
+import Scroller from '@/components/Scroller'
+Vue.component('Scroller', Scroller)
+
+/* eslint-disable-next-line import/first */
+import Loading from '@/components/Loading'
+Vue.component('Loading', Loading)
+
 Vue.filter('setWH', (url, arg) => {
   return url.replace(/w\.h/, arg)
 })

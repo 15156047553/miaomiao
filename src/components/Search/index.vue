@@ -46,10 +46,12 @@ export default {
   watch: {
     message (newVal) {
       var that = this
-      this.cancelRequest()
 
+      var cityId = this.$store.state.city.id
+
+      this.cancelRequest()
       this.axios({
-        url: `/api/searchList?cityId=10&kw=${newVal}`,
+        url: `/api/searchList?cityId=${cityId}&kw=${newVal}`,
         cancelToken: new this.axios.CancelToken((c) => {
           that.source = c
         })
